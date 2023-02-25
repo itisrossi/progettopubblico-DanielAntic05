@@ -57,18 +57,6 @@ function scambia(numeri, inizio, posMinimo){
 selectionSort(numeri, 0, numeri.length -1);
 
 
-function quickSort(numeri, inizio, fine){
-    if (inizio === fine)
-        return;
-
-    else {
-        let pivot = numeri[inizio];
-        let posPivot = partition(numeri, inizio, fine);
-        quickSort(numeri, inizio, posPivot -1);
-        quickSort(numeri, posPivot +1, fine);
-    }
-}
-
 for (let i=0; i< numeri.length; i++){
     console.log(numeri[i]);
 }
