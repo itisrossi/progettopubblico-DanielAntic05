@@ -45,17 +45,20 @@ function scambia(numeri, inizio, posMinimo){
 
 }
 
-let numeri = [10,9,8,7,6,5,4,3,2,1];
+let numeri = [];
 let inizio = 0;
-let fine = numeri.length -1;
 // riempio l'array
-//for (let i=0; i<numeri.length; i++){
-//    numeri[i] = window.prompt("Inserisci un numero");
+for (let i=0; i<100; i++){
+    numeri[i] = Math.floor(Math.random() * 100000); 
     
-//}
+}
+let fine = numeri.length -1;
 
-document.write("Orginal array:" + numeri + "<br/>");
-
+//document.write("Orginal array:" + numeri + "<br/>");
+const dStart = new Date(); 
 selectionSort(numeri, 0, numeri.length -1);
+const dEnd = new Date(); 
+let durataSelection = dEnd.getTime() - dStart.getTime();
 
-document.write("Sorted array (Selection Sort):"+ numeri + "<br/>");
+//document.write("Sorted array (Selection Sort):"+ numeri + "<br/>");
+document.write("Impiegato: "+ durataSelection + " milliseconds <br/>");
