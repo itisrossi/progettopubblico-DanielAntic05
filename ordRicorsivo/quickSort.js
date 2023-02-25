@@ -61,12 +61,12 @@ function printArray(arr, size) {
  
 // Let's start by sorting the unsorted.
  
-let arr = new Array(4);
+let arr  = [10,9,8,7,6,5,4,3,2,1];
 let n = arr.length;
-for(let i=0; i<n; i++){
-    arr[i]= prompt("Inserisci un numero");
-}
+//for(let i=0; i<n; i++){
+//    arr[i]= prompt("Inserisci un numero");
+//}
  
-document.write("Orginal array:" + arr);
+document.write("Orginal array:" + arr + "<br/>");
 quickSort(arr, 0, n - 1);
-document.write("Sorted array:"+arr);
+document.write("Sorted array (quick sort):"+arr + "<br/>");

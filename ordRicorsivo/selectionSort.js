@@ -1,14 +1,5 @@
-let numeri = new Array(4);
-let inizio = 0;
-let fine = numeri.length -1;
-// riempio l'array
-for (let i=0; i<numeri.length; i++){
-    numeri[i] = window.prompt("Inserisci un numero");
-    
-}
 
 
-selectionSort(numeri, inizio, fine);
 
 function selectionSort(numeri, inizio, fine){
     let posMinimo = 0;
@@ -54,9 +45,17 @@ function scambia(numeri, inizio, posMinimo){
 
 }
 
+let numeri = [10,9,8,7,6,5,4,3,2,1];
+let inizio = 0;
+let fine = numeri.length -1;
+// riempio l'array
+//for (let i=0; i<numeri.length; i++){
+//    numeri[i] = window.prompt("Inserisci un numero");
+    
+//}
+
+document.write("Orginal array:" + numeri + "<br/>");
+
 selectionSort(numeri, 0, numeri.length -1);
 
-
-for (let i=0; i< numeri.length; i++){
-    console.log(numeri[i]);
-}
+document.write("Sorted array (Selection Sort):"+ numeri + "<br/>");
