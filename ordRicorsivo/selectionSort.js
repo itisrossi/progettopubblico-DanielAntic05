@@ -1,14 +1,5 @@
-let numeri = new Array(4);
-let inizio = 0;
-let fine = numeri.length -1;
-// riempio l'array
-for (let i=0; i<numeri.length; i++){
-    numeri[i] = window.prompt("Inserisci un numero");
-    
-}
 
 
-selectionSort(numeri, inizio, fine);
 
 function selectionSort(numeri, inizio, fine){
     let posMinimo = 0;
@@ -54,21 +45,20 @@ function scambia(numeri, inizio, posMinimo){
 
 }
 
+let numeri = [];
+let inizio = 0;
+// riempio l'array
+for (let i=0; i<100; i++){
+    numeri[i] = Math.floor(Math.random() * 100000); 
+    
+}
+let fine = numeri.length -1;
+
+//document.write("Orginal array:" + numeri + "<br/>");
+const dStart = new Date(); 
 selectionSort(numeri, 0, numeri.length -1);
+const dEnd = new Date(); 
+let durataSelection = dEnd.getTime() - dStart.getTime();
 
-
-function quickSort(numeri, inizio, fine){
-    if (inizio === fine)
-        return;
-
-    else {
-        let pivot = numeri[inizio];
-        let posPivot = partition(numeri, inizio, fine);
-        quickSort(numeri, inizio, posPivot -1);
-        quickSort(numeri, posPivot +1, fine);
-    }
-}
-
-for (let i=0; i< numeri.length; i++){
-    console.log(numeri[i]);
-}
+//document.write("Sorted array (Selection Sort):"+ numeri + "<br/>");
+document.write("Impiegato: "+ durataSelection + " milliseconds <br/>");

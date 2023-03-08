@@ -61,12 +61,17 @@ function printArray(arr, size) {
  
 // Let's start by sorting the unsorted.
  
-let arr = new Array(4);
-let n = arr.length;
-for(let i=0; i<n; i++){
-    arr[i]= prompt("Inserisci un numero");
+let arr  = [];
+for(let i=0; i < 10000000; i++){
+    arr[i] = Math.floor(Math.random() * 100000); 
 }
- 
-document.write("Orginal array:" + arr);
+n = arr.length;
+//document.write("Orginal array:" + arr + "<br/>");
+const dStartQuick = new Date(); 
+
 quickSort(arr, 0, n - 1);
-document.write("Sorted array:"+arr);
+const dEndQuick = new Date(); 
+let durataQuick = dEndQuick.getTime() - dStartQuick.getTime();
+
+//document.write("Sorted array (quick sort):"+arr + "<br/>");
+document.write("Impiegato: "+ durataQuick + " milliseconds <br/>");
