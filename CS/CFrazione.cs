@@ -5,7 +5,7 @@ using System.Text;
 namespace TestFrazioni{
     // le classi le chiamiamo CNomeclasse
     class CFrazioni{
-        // andiamo a d aggiungere delle variabili che saranno visibili dentro la classe
+        // andiamo ad aggiungere delle variabili che saranno visibili dentro la classe
         // per indicare questo diciamo che sono private
         // le variabili le chiamiamo con mNomeVariabile oppure con _NomeVariabile (tutto questo quando sono private)
         private int mNumeratore;
