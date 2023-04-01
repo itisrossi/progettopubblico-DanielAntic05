@@ -1,5 +1,0 @@
-C:\Users\Antic\OneDrive\Desktop\AnticDaniel\progettopubblico-DanielAntic05\CS\obj\Debug\net7.0\CS.csproj.AssemblyReference.cache
-C:\Users\Antic\OneDrive\Desktop\AnticDaniel\progettopubblico-DanielAntic05\CS\obj\Debug\net7.0\CS.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Antic\OneDrive\Desktop\AnticDaniel\progettopubblico-DanielAntic05\CS\obj\Debug\net7.0\CS.AssemblyInfoInputs.cache
-C:\Users\Antic\OneDrive\Desktop\AnticDaniel\progettopubblico-DanielAntic05\CS\obj\Debug\net7.0\CS.AssemblyInfo.cs
-C:\Users\Antic\OneDrive\Desktop\AnticDaniel\progettopubblico-DanielAntic05\CS\obj\Debug\net7.0\CS.csproj.CoreCompileInputs.cache
