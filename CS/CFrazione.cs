@@ -77,12 +77,6 @@ namespace Frazioni
             return ris;
         }
 
-        public override string ToString(){
-            string risultato = "";
-            risultato = this.num.ToString() + "/" + this.den.ToString();
-            return risultato;
-        }
-
         public string ToString(bool json)
         {
                 string risultato = "";
@@ -90,7 +84,7 @@ namespace Frazioni
                                 // JsonSerializer classe che permette di trasformare una stringa json
                     risultato = JsonSerializer.Serialize(this);
                 else
-                    risultato = ToString();
+                    risultato = risultato.ToString();
 
                 return risultato;
         }
@@ -178,13 +172,13 @@ namespace Frazioni
         public CFrazione semplifica()
         {
             int mcd = 0;
-            mcd = MCD(this.num, this.den) != 1
+            mcd = MCD(this.num, this.den);
                 this.num /= mcd;
                 this.den /= mcd;
-
+            }
             // return dell'oggetto cambiato
             return this;
-        }
+
         private int MCD(int n1, int n2)
         {
             
