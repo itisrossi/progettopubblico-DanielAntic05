@@ -54,13 +54,6 @@ namespace Frazioni
             this.den = den;
         }
 
-        public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString = regalo
-        { // override per sovrascrivere e togliere il warning :)
-            string risultato = "";
-            risultato = this.num.ToString() + "/" + this.den.ToString();
-            return risultato;
-        }
-
         // Somma
         public static CFrazione Somma(CFrazione f1, CFrazione f2) // static = di classe
         {
@@ -77,6 +70,15 @@ namespace Frazioni
             return ris;
         }
 
+         // override sovrascrive il ToString
+        public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString = regalo
+        { // override per sovrascrivere e togliere il warning :)
+            string risultato = "";
+            risultato = this.num.ToString() + "/" + this.den.ToString();
+            return risultato;
+        }
+
+        // non c'e' l'override perche' c'e' un bool
         public string ToString(bool json)
         {
                 string risultato = "";
@@ -175,9 +177,11 @@ namespace Frazioni
             mcd = MCD(this.num, this.den);
                 this.num /= mcd;
                 this.den /= mcd;
-            }
             // return dell'oggetto cambiato
-            return this;
+                return this;
+            }
+            
+            
 
         private int MCD(int n1, int n2)
         {
