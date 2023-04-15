@@ -11,6 +11,7 @@ namespace Frazioni
     {
         private int _num, _den; // usabili solo in questa classe
 
+        // num è una variabile pubblica, quindi si può usare nei costruttori
         public int num // usabili anche da fuori = property dell'oggetto
         {
             get
@@ -22,8 +23,8 @@ namespace Frazioni
                 _num = value;
             }
         }
-        // servono per controllare se i valori dati in input sono accettabili
-        // 
+        // servono per controllare se i valori 
+        // dati in input sono accettabili
         public int den
         {
             get
@@ -47,15 +48,20 @@ namespace Frazioni
             num = 0; //è come mettere this.num = 0; 
             den = 0; //con la property me lo mette lui a 1
         }
-
+// _____________________________________________________________________________________________________________
+// da qui iniziano i costruttori ai quali accedono f1, f2, f3, f4, f5 nel file "Program.cs"
         public CFrazione(int num, int den) //overloading costruttore = diamo più informazioni
         {
-            this.num = num; // num property è uguale a num parametro
+            // num property è uguale a num parametro
+            this.num = num; 
             this.den = den;
         }
+// __________________________________________________________________________________________________________________________
+// Da qui si calcola il risultato --> r
 
-        // Somma
-        public static CFrazione Somma(CFrazione f1, CFrazione f2) // static = di classe
+    // Somma
+        // static = di classe
+        public static CFrazione Somma(CFrazione f1, CFrazione f2)
         {
             CFrazione ris;
             ris = new CFrazione();
@@ -66,7 +72,15 @@ namespace Frazioni
 
         public CFrazione Somma(CFrazione f1) // da fare sull'oggetto
         {
-            CFrazione ris = CFrazione.Somma(this, f1); //per non ricopiare il codice // this = l'oggetto su cui applico la funzione
+            CFrazione ris = CFrazione.Somma(this, f1); //per non ricopiare il codice 
+                                                       // this = l'oggetto su cui applico la funzione
+            return ris;
+        }
+
+        //override dell'operatore +
+        public static CFrazione operator +(CFrazione f1, CFrazione f2) // static = di classe
+        {
+            CFrazione ris = CFrazione.Somma(f1, f2);
             return ris;
         }
 
@@ -89,13 +103,6 @@ namespace Frazioni
                     risultato = risultato.ToString();
 
                 return risultato;
-        }
-
-        //override dell'operatore +
-        public static CFrazione operator +(CFrazione f1, CFrazione f2) // static = di classe
-        {
-            CFrazione ris = CFrazione.Somma(f1, f2);
-            return ris;
         }
 
         //Sottrazione
@@ -179,14 +186,19 @@ namespace Frazioni
                 this.den /= mcd;
             // return dell'oggetto cambiato
                 return this;
-            }
-            
-            
-
+            }   
         private int MCD(int n1, int n2)
         {
-            
-        }
+            n1 = Math.Abs(n1);
+            n2 = Math.Abs(n2);
 
+            while (n1 != 0 && n2 != 0){
+                if (n1 > n2)
+                    n1 %= n2;
+                else
+                    n1 %= n2;
+            }
+            return n1 | n2;
+        }
     }
 }
