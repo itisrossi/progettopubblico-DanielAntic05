@@ -67,7 +67,7 @@ namespace Frazioni
             ris = new CFrazione();
             ris.den = f1.den * f2.den;
         // Se il denominatore è pari, basta dividere per 2 ris.den (mcm) per ottenere il denominatore ai minimi termini
-            if (ris.den % 2 == 0)
+            if (f1.den % 2 == 0 && f2.den % 2 == 0)
                 ris.den /= 2;
             // Console.WriteLine("Il denominatore è " + ris.den); --> 48  (check)
 
@@ -124,6 +124,10 @@ namespace Frazioni
             CFrazione ris;
             ris = new CFrazione();
             ris.den = f1.den * f2.den;
+
+            if (f1.den % 2 == 0 && f2.den % 2 == 0)
+                ris.den /= 2;
+                
             ris.num = (ris.den / f1.den) * f1.num - (ris.den / f2.den) * f2.num;
             return ris;
         }
