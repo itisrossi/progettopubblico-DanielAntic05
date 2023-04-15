@@ -66,6 +66,11 @@ namespace Frazioni
             CFrazione ris;
             ris = new CFrazione();
             ris.den = f1.den * f2.den;
+        // Se il denominatore è pari, basta dividere per 2 ris.den (mcm) per ottenere il denominatore ai minimi termini
+            if (ris.den % 2 == 0)
+                ris.den /= 2;
+            // Console.WriteLine("Il denominatore è " + ris.den); --> 48  (check)
+
             ris.num = (ris.den / f1.den) * f1.num + (ris.den / f2.den) * f2.num;
             return ris;
         }
@@ -84,8 +89,16 @@ namespace Frazioni
             return ris;
         }
 
-         // override sovrascrive il ToString
-        public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString = regalo
+         // override sovrascrive il ToString:
+
+         /* permette di estendere o modificare l'implementazione 
+            astratta o virtuale di un metodo, una proprietà,
+            un indicizzatore o un evento ereditato.
+
+            Infatti, siccome esiste gia' il metodo ToString(),
+            per farne uno nostro usiamo l'override.
+        */
+        public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString
         { // override per sovrascrivere e togliere il warning :)
             string risultato = "";
             risultato = this.num.ToString() + "/" + this.den.ToString();
