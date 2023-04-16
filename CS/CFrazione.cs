@@ -74,13 +74,14 @@ namespace Frazioni
             ris.num = (ris.den / f1.den) * f1.num + (ris.den / f2.den) * f2.num;
             return ris;
         }
+        // Altro modo per fare la somma:
 
-        public CFrazione Somma(CFrazione f1) // da fare sull'oggetto
-        {
-            CFrazione ris = CFrazione.Somma(this, f1); //per non ricopiare il codice 
-                                                       // this = l'oggetto su cui applico la funzione
-            return ris;
-        }
+        // public CFrazione Somma(CFrazione f1) // da fare sull'oggetto
+        // {
+        //     CFrazione ris = CFrazione.Somma(this, f1); //per non ricopiare il codice 
+        //                                                // this = l'oggetto su cui applico la funzione
+        //     return ris;
+        // }
 
         //override dell'operatore +
         public static CFrazione operator +(CFrazione f1, CFrazione f2) // static = di classe
@@ -98,6 +99,7 @@ namespace Frazioni
             Infatti, siccome esiste gia' il metodo ToString(),
             per farne uno nostro usiamo l'override.
         */
+        // Forse (Si esegue da solo):
         public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString
         { // override per sovrascrivere e togliere il warning :)
             string risultato = "";
@@ -105,18 +107,18 @@ namespace Frazioni
             return risultato;
         }
 
-        // non c'e' l'override perche' c'e' un bool
-        public string ToString(bool json)
-        {
-                string risultato = "";
-                if (json)
-                                // JsonSerializer classe che permette di trasformare una stringa json
-                    risultato = JsonSerializer.Serialize(this);
-                else
-                    risultato = risultato.ToString();
+        // // non c'e' l'override perche' c'e' un bool
+        // public string ToString(bool json)
+        // {
+        //         string risultato = "";
+        //         if (json)
+        //                         // JsonSerializer classe che permette di trasformare una stringa json
+        //             risultato = JsonSerializer.Serialize(this);
+        //         else
+        //             risultato = risultato.ToString();
 
-                return risultato;
-        }
+        //         return risultato;
+        // }
 
         //Sottrazione
         public static CFrazione Sottrazione(CFrazione f1, CFrazione f2) // static = di classe
@@ -206,6 +208,8 @@ namespace Frazioni
             }   
         private int MCD(int n1, int n2)
         {
+            // Math.Abs() restituisce il valore assoluto di un numero!
+            
             n1 = Math.Abs(n1);
             n2 = Math.Abs(n2);
 
