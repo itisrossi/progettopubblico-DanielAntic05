@@ -83,7 +83,10 @@ namespace Frazioni
         //     return ris;
         // }
 
-        //override dell'operatore +
+        //override dell'operatore +:
+        // si esegue da solo come un normale override,
+        // solo che deve essere tra due variabili,
+        // siccome e' un operazione
         public static CFrazione operator +(CFrazione f1, CFrazione f2) // static = di classe
         {
             CFrazione ris = CFrazione.Somma(f1, f2);
@@ -99,7 +102,8 @@ namespace Frazioni
             Infatti, siccome esiste gia' il metodo ToString(),
             per farne uno nostro usiamo l'override.
         */
-        // Forse (Si esegue da solo):
+
+        // Poiché è un override si esegue da solo !!!
         public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString
         { // override per sovrascrivere e togliere il warning :)
             string risultato = "";
