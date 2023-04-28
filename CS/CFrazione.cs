@@ -40,7 +40,7 @@ namespace Frazioni
                     _den = 1; 
             }
         }
-        public int cambia = 1;
+        
         public CFrazione() //costruttore di default
         {
             num = 0; //è come mettere this.num = 0; 
