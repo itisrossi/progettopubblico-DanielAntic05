@@ -9,10 +9,12 @@ namespace Frazioni
 {
     class CFrazione
     {
+        // 1. variabili di istanza
         private int _num, _den; // usabili solo in questa classe
 
         // num è una variabile pubblica, quindi si può usare nei costruttori
-        public int num // usabili anche da fuori = property dell'oggetto
+        // 2. dichiarazione delle property
+        public int num
         {
             get
             {
@@ -40,8 +42,9 @@ namespace Frazioni
                     _den = 1; 
             }
         }
-        
-        public CFrazione() //costruttore di default
+
+        // 3. Definizione costruttori
+        public CFrazione() //costruttore di default è quello che non ha parametri
         {
             num = 0; //è come mettere this.num = 0; 
             den = 0; //con la property me lo mette lui a 1
@@ -56,9 +59,17 @@ namespace Frazioni
         }
 // __________________________________________________________________________________________________________________________
 // Da qui si calcola il risultato --> r
+    /*
+        Metodo di classe è quello che ha lo static, non hanno bisogno 
+        di un oggetto per essere chiamati ma del nome della classe
+        Esempio: sqrt()
+        Siccome non ha bisogno di un oggetto per essere chiamato non avrà this
 
-    // Somma
+        Metodo di istanza è il metodo public CFrazione Somma()
+    */
+    // Metodo di classe Somma 
         // static = di classe
+        // nei metodi static non si può usare this.
         public static CFrazione Somma(CFrazione f1, CFrazione f2)
         {
             CFrazione ris;
@@ -67,14 +78,14 @@ namespace Frazioni
             ris.num = (ris.den / f1.den) * f1.num + (ris.den / f2.den) * f2.num;
             return ris.semplifica(ris);
         }
-        // Altro modo per fare la somma:
+        // Metodo di istanza Somma:
 
-        // public CFrazione Somma(CFrazione f1) // da fare sull'oggetto
-        // {
-        //     CFrazione ris = CFrazione.Somma(this, f1); //per non ricopiare il codice 
-        //                                                // this = l'oggetto su cui applico la funzione
-        //     return ris;
-        // }
+        public CFrazione Somma(CFrazione f) // da fare sull'oggetto
+        {
+            CFrazione ris = CFrazione.Somma(this, f); // this = l'oggetto su cui applico la funzione --> f1
+                                                      // della classe Program
+            return ris;
+        }
 
         //override dell'operatore +
         public static CFrazione operator +(CFrazione f1, CFrazione f2) // static = di classe
@@ -92,15 +103,18 @@ namespace Frazioni
             Infatti, siccome esiste gia' il metodo ToString(),
             per farne uno nostro usiamo l'override.
         */
-        // Forse (Si esegue da solo):
+        // Si esegue da solo:
         public override string ToString() // da warning perchè è già presente in ogni classe il metodo ToString
-        { // override per sovrascrivere e togliere il warning :)
-            string risultato = "";
-            risultato = this.num.ToString() + "/" + this.den.ToString();
+        {                                 // override per sovrascrivere e togliere il warning :)
+            // string risultato = "";
+            // risultato = this.num.ToString() + "/" + this.den.ToString();
+            // oppure:
+            string risultato = this.num.ToString() + "/" + this.den.ToString();
             return risultato;
         }
-
-        // // non c'e' l'override perche' c'e' un bool
+        
+        // questo si usa per gli oggetti Javascript
+        // non c'e' l'override perche' c'e' un bool
         // public string ToString(bool json)
         // {
         //         string risultato = "";
@@ -186,6 +200,7 @@ namespace Frazioni
             CFrazione ris = CFrazione.Divisione(f1, f2);
             return ris;
         }
+        // metodo di istanza
         public CFrazione semplifica(CFrazione result)
         {
             int mcd = 0;
@@ -197,7 +212,9 @@ namespace Frazioni
             // return dell'oggetto cambiato
                 return result;
                 
-            }   
+            }
+
+        // Funzione per trovare l'MCD
         private int MCD(int n1, int n2)
         {
             // Math.Abs() restituisce il valore assoluto di un numero!

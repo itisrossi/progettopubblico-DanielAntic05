@@ -24,8 +24,16 @@ namespace Frazioni{
 
             // Console.WriteLine("{0} ", f1);
 
-            // Primo modo per fare la somma
+            // Chiamare metodo statico
             r = CFrazione.Somma(f1, f2);
+
+            Console.WriteLine("Somma " + f1 + " + " + f2 + " = " + r);
+
+            // Chiamare metodo di istanza
+            // per chiamarlo serve un oggetto
+            r = f1.Somma(f2); 
+            
+
             // Controllo
             Console.WriteLine("Somma " + f1 + " + " + f2 + " = " + r);
             
@@ -49,6 +57,8 @@ namespace Frazioni{
             // Console.WriteLine("Somma di 5/6 + 7/8 = {0} ", r);
 
             // Terzo modo per fare la somma e anche altre operazioni:
+            // con il + chiamo il metodo + che è un operator quindi spedisce 
+            // le due variabili ai suoi lati --> stessa cosa per le altre operazioni (-, *, /).
             r = ((f1 + f2) * f3) / (f4 - f5); 
             
             // Console.WriteLine("Hai creato la frazione {0} e la frazione {1} somma {2}", f1.ToString(), f2, r);

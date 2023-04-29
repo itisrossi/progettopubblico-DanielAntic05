@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Zlatko\\.nuget\\packages\\": {}
+    "C:\\Users\\AnticHp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zlatko\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\CS.csproj",
+      "projectUniqueName": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\CS.csproj",
       "projectName": "CS",
-      "projectPath": "C:\\Users\\Zlatko\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\CS.csproj",
-      "packagesPath": "C:\\Users\\Zlatko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zlatko\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\obj\\",
+      "projectPath": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\CS.csproj",
+      "packagesPath": "C:\\Users\\AnticHp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Zlatko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\AnticHp\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
