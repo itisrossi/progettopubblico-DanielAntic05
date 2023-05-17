@@ -11,8 +11,8 @@ namespace Frazioni{
     class Program{
         static void Main(string[] args)
         {
-            CHugeNumber n1 = new CHugeNumber("54321");
-            CHugeNumber n2 = new CHugeNumber("12345");
+            CHugeNumber n1 = new CHugeNumber("100");
+            CHugeNumber n2 = new CHugeNumber("10");
             CHugeNumber risultato = new CHugeNumber();
 
             // CFrazione f1, f2, f3, f4, f5, r;
@@ -76,17 +76,19 @@ namespace Frazioni{
 
             risultato = (n1 / n2);
             
-            string divisioneVirgola = risultato.ToString();
-            char Virgola = divisioneVirgola[divisioneVirgola.Length - 1]; 
-            string divisione = "";
-            if (Virgola == '.'){
-            for (int i = divisioneVirgola.Length - 1; i >= 0; i--){
-                if (divisioneVirgola[i] != Virgola)
-                    divisione += divisioneVirgola[i];
-            }
-            Console.WriteLine("La divisione e' = {0}", divisione);
-            } else
-                Console.WriteLine("La divisione e' = {0}", divisioneVirgola);
+            // string divisioneVirgola = risultato.ToString();
+            // char Virgola = divisioneVirgola[divisioneVirgola.Length - 1]; 
+            // string divisione = "";
+            // if (Virgola == '.'){
+            // for (int i = divisioneVirgola.Length - 1; i >= 0; i--){
+            //     if (divisioneVirgola[i] != Virgola)
+            //         divisione += divisioneVirgola[i];
+            // }
+            // Console.WriteLine("La divisione e' = {0}", divisione);
+            //} else
+                // Console.WriteLine("La divisione e' = {0}", divisioneVirgola);
+            
+            Console.WriteLine("La divisione e' = {0}", risultato.ToString());
         }
     }
 }

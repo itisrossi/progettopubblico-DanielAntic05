@@ -1,10 +1,6 @@
-﻿using Frazioni;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Calcolatrice
-{
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Text;
     class CCalcolatrice
     {
         public enum Operazioni
@@ -18,28 +14,29 @@ namespace Calcolatrice
         private CHugeNumber mPrimoOperando;
         private CHugeNumber mSecondoOperando;
         private CHugeNumber mRisultato;
-        private Operazioni mOperatore;
+        private Operazioni mOperazione;
 
         public CHugeNumber PrimoOperando
         {
             get { return mPrimoOperando; }
-            set { mPrimoOperando = value;}
+            set { mPrimoOperando = value; }
         }
 
         public CHugeNumber SecondoOperando
         {
-            get { return mSecondoOperando;}
+            get { return mSecondoOperando; }
             set { mSecondoOperando = value; }
         }
 
         public CHugeNumber Risultato
         {
             get { return mRisultato; }
-            set { mRisultato = value;}
+            set { mRisultato = value; }
         }
-        public Operazioni Operatore
+        // [ + - * / ]
+        public Operazioni Operazione
         {
-            get { return mOperatore; }
-            set { mOperatore = value; }
+            get { return mOperazione; }
+            set { mOperazione = value; }
         }
     }

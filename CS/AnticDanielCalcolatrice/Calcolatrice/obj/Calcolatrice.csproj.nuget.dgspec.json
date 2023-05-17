@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\Calcolatrice\\Calcolatrice\\Calcolatrice.csproj": {}
+    "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\AnticDanielCalcolatrice\\Calcolatrice\\Calcolatrice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\Calcolatrice\\Calcolatrice\\Calcolatrice.csproj": {
+    "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\AnticDanielCalcolatrice\\Calcolatrice\\Calcolatrice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\Calcolatrice\\Calcolatrice\\Calcolatrice.csproj",
+        "projectUniqueName": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\AnticDanielCalcolatrice\\Calcolatrice\\Calcolatrice.csproj",
         "projectName": "Calcolatrice",
-        "projectPath": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\Calcolatrice\\Calcolatrice\\Calcolatrice.csproj",
+        "projectPath": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\AnticDanielCalcolatrice\\Calcolatrice\\Calcolatrice.csproj",
         "packagesPath": "C:\\Users\\AnticHp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\Calcolatrice\\Calcolatrice\\obj\\",
+        "outputPath": "C:\\Users\\AnticHp\\Desktop\\AnticGit\\progettopubblico-DanielAntic05\\CS\\AnticDanielCalcolatrice\\Calcolatrice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AnticHp\\AppData\\Roaming\\NuGet\\NuGet.Config",

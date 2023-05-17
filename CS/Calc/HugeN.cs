@@ -7,8 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Frazioni
-{
     class CHugeNumber
     {
         private const int N = 300;
@@ -104,7 +102,7 @@ namespace Frazioni
             CHugeNumber ris = new CHugeNumber();
             CHugeNumber uno = new CHugeNumber("1");
             CHugeNumber zero = new CHugeNumber("0");
-            while (compare(n2, zero) == true)
+            while (maggiore(n2, zero) == true)
             {
                 ris += n1;
                 n2 = n2 - uno;
@@ -117,23 +115,63 @@ namespace Frazioni
             CHugeNumber ris = new CHugeNumber("0");
             CHugeNumber uno = new CHugeNumber("1");
             CHugeNumber zero = new CHugeNumber("0");
-            if (compare(n2, n1) == true)
+            if (maggiore(n2, n1) == true)
             {
                 return ris;
             }
             else
             {
-                while (compare(n1, zero) == true)
+                while (maggiore(n1, zero) == true)
                 {
-                    n1 = n1 - n2;
-                    // if (compare(n1, zero) == true)
-                    // {
+                // quando n1 e' minore del dividendo, devo stoppare
+                if (maggiore(n1, n2) == true || uguale(n1, n2) == true)
+                    {
                         ris += uno;
-                    // }
+                    }
+                    n1 -= n2;
                 }
                 return ris;
-                }
             }
+        }
+    // per controllare se le volte sono uguale al numero sotto radice
+    public static bool uguale(CHugeNumber n1, CHugeNumber n2)
+    {
+        // n1 = volte * volte   n2 = numero sotto radice
+        int len = N - lunghezza(n1), len2 = N - lunghezza(n2);
+        if (len == len2)
+        {
+            int i = 0;
+
+            while (i < len)
+            {
+                if (n1.Cifre[N - len + i + 1 - 1] == n2.Cifre[N - len + i + 1 - 1])
+                    i++;
+                else
+                    return false;
+            }
+            if (i == len)
+                return true;
+        }
+        return false;
+    }
+        public static CHugeNumber sqrt(CHugeNumber n)
+        {
+        CHugeNumber uno = new CHugeNumber("1");
+        CHugeNumber result = new CHugeNumber("0");
+        CHugeNumber volte = new CHugeNumber("1");
+        while (maggiore(volte, n) == false)
+            {
+            if (uguale(volte * volte, n) == true)
+            {
+                result = volte;
+                break;
+            }
+
+                volte += uno;
+            }
+            return result;
+                
+        }
 
         static int lunghezza(CHugeNumber n)
         {
@@ -156,20 +194,21 @@ namespace Frazioni
             }
             return len;
         }
-        public static bool compare (CHugeNumber n1, CHugeNumber n2)
+        public static bool maggiore(CHugeNumber n1, CHugeNumber n2)
         {
             int len = N - lunghezza(n1), len2 = N - lunghezza(n2);
             // se il primo numero nell'array e' negativo
             if (len != 0){
+            // per controllare se la prima cifra e' negativa
             if (n1.Cifre[N - len] >= 0){
             if (len > len2)
                 return true;
             else if (len == len2){
                 int i = 0, state = 1;
-                while (state == 1 && i < N - 1){
-                    if (n1.Cifre[N - len + i - 1] > n2.Cifre[N - len + i - 1])
+                while (state == 1 && i < len){
+                    if (n1.Cifre[N - len + 1 + i - 1] > n2.Cifre[N - len + 1 + i - 1])
                         return true;
-                    else if (n1.Cifre[N - len + i - 1] < n2.Cifre[N - len + i - 1])
+                    else if (n1.Cifre[N - len + 1 + i - 1] < n2.Cifre[N - len + 1 + i - 1])
                         return false;
                     else
                         state = 1;
@@ -180,27 +219,26 @@ namespace Frazioni
         }
             return false;
         }
-
         public override string ToString()
         {
             // CHugeNumber zero = new CHugeNumber();
             string ris = "";
             int counter = 0;
+            bool afterZero = false;
             
                 for (int i = 0; i < N; i++)
                 {
-                    if (this.Cifre[i] == 0)
+                    if (this.Cifre[i] == 0 && afterZero == false)
                         counter++;
-
-                    if (this.Cifre[i] == 99)
-                        ris += ".";
                     else
+                    {
                         ris += this.Cifre[i];
+                        afterZero = true;
+                    }
                 }
                 if (counter == N)
                     return "0";
                 else
                     return ris.TrimStart('0');
-        }
         }
     }
