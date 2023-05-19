@@ -87,6 +87,7 @@ namespace Calcolatrice
                     break;
 
                 default:
+                    calcolatrice.Risultato = calcolatrice.SecondoOperando;
                     break;
             }
             display.Text = calcolatrice.Risultato.ToString();
@@ -95,14 +96,14 @@ namespace Calcolatrice
         private void button3_Click(object sender, EventArgs e)
         {
             display.Text = "0";
+            isPositive = true;
         }
         // C
         private void button4_Click(object sender, EventArgs e)
         {
             display.Text = "0";
             labelCurrentOperation.Text = "";
-            isPositive = false;
-            //resultValue = "0";
+            isPositive = true;
         }
 
         private void canc_Click(object sender, EventArgs e)

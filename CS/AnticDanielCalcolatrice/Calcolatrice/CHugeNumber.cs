@@ -1,8 +1,4 @@
-﻿/* 
-Scrivere un programma che riesce a stampare un 
-numero molto grande (esempio: con 300 cifre).
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +66,7 @@ using System.Text;
                     {
                         Riporto = 1;
                         risultato.Cifre[i] -= 10;
-                        // Controllo overflow
+
                         if (i == 0)
                             // throw new OverflowException();
                             Riporto = 0;
@@ -148,7 +144,7 @@ using System.Text;
                 return ris;
             }
         }
-    // per controllare se le volte sono uguale al numero sotto radice
+    // per controllare se le volte sono uguali al numero sotto radice
     public static bool uguale(CHugeNumber n1, CHugeNumber n2)
     {
         // n1 = volte * volte   n2 = numero sotto radice
@@ -237,7 +233,6 @@ using System.Text;
         }
         public override string ToString()
         {
-            // CHugeNumber zero = new CHugeNumber();
             string ris = "";
             int counter = 0;
             bool afterZero = false;
