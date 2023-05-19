@@ -123,7 +123,12 @@ namespace Calcolatrice
         //potenza di un numero
         private void click_Pow(object sender, EventArgs e)
         {
-            calcolatrice.PrimoOperando = new CHugeNumber(display.Text);
+            string power = display.Text;
+
+            if (power[0] == '-')
+                power = display.Text.Substring(1);
+
+            calcolatrice.PrimoOperando = new CHugeNumber(power);
             calcolatrice.Risultato = calcolatrice.PrimoOperando * calcolatrice.PrimoOperando;
             display.Text = calcolatrice.Risultato.ToString();
         }
