@@ -11,7 +11,7 @@ namespace Frazioni{
     class Program{
         static void Main(string[] args)
         {
-            CHugeNumber n1 = new CHugeNumber("100");
+            CHugeNumber n1 = new CHugeNumber("-1");
             CHugeNumber n2 = new CHugeNumber("10");
             CHugeNumber risultato = new CHugeNumber();
 

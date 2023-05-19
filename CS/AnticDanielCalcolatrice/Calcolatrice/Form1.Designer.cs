@@ -78,7 +78,7 @@ namespace Calcolatrice
             // labelCurrentOperation
             // 
             labelCurrentOperation.AutoSize = true;
-            labelCurrentOperation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelCurrentOperation.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelCurrentOperation.Location = new System.Drawing.Point(12, 0);
             labelCurrentOperation.Name = "labelCurrentOperation";
             labelCurrentOperation.Size = new System.Drawing.Size(0, 21);
@@ -170,6 +170,7 @@ namespace Calcolatrice
             button22.TabIndex = 21;
             button22.Text = "+/-";
             button22.UseVisualStyleBackColor = true;
+            button22.Click += changeSimbol_Click;
             // 
             // button21
             // 
@@ -349,6 +350,7 @@ namespace Calcolatrice
             button7.TabIndex = 6;
             button7.Text = "x^2";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += click_Pow;
             // 
             // button6
             // 
@@ -407,6 +409,7 @@ namespace Calcolatrice
             button2.TabIndex = 1;
             button2.Text = "%";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += click_Percent;
             // 
             // button1
             // 
@@ -443,7 +446,6 @@ namespace Calcolatrice
             Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
             Name = "Form1";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Calculator";

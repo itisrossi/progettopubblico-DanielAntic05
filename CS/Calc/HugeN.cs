@@ -25,15 +25,30 @@ using System.Text;
         // usiamo una stringa perche' puo' possedere piu' caratteri di un int, double, ecc.
         public CHugeNumber(string numero)
         {
-            char[] stringArray = numero.ToCharArray();
+            bool isNegative = false;
+            char[] stringArray;
+        // se il primo carattere e' negativo, tolgo il - dall'array di char
+            if (numero[0] == '-')
+            {
+                stringArray = (numero.Substring(1)).ToCharArray();
+                isNegative = true;
+            }
+            else
+                stringArray = numero.ToCharArray();
+            // giro l'array di char e lo salvo nella stringa numero
             Array.Reverse(stringArray);
             numero = new string(stringArray);
             Cifre = new int[N];
+        // salvo nell'ultima cella dell'array il primo carattere
             if (numero.Length < N) {
                 for (int i = 0; i < numero.Length; i++)
                 {
                     // Cifre[N - i - 1] = numero[numero.Length - i - 1] - "0";
-                    Cifre[N - i - 1] = Convert.ToInt32(numero[i]) - 48;
+                    if (isNegative == true && i == numero.Length - 1)
+                    // se e' negativo il primo numero allora nell'array lo tasformo in negativo
+                        Cifre[N - i - 1] = -(Convert.ToInt32(numero[i]) - 48);
+                    else
+                        Cifre[N - i - 1] = Convert.ToInt32(numero[i]) - 48;
                 }
             }   else {
                     throw new InvalidOperationException();
@@ -154,6 +169,7 @@ using System.Text;
         }
         return false;
     }
+    // Radice quadrata
         public static CHugeNumber sqrt(CHugeNumber n)
         {
         CHugeNumber uno = new CHugeNumber("1");

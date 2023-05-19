@@ -3,18 +3,18 @@
 //using System.Text;
     class CCalcolatrice
     {
-        public enum Operazioni
-        {
-            somma,
-            prodotto,
-            divisione,
-            moltiplicazione
-        }
+        //public enum Operazioni
+        //{
+        //    somma,
+        //    prodotto,
+        //    divisione,
+        //    moltiplicazione
+        //}
 
         private CHugeNumber mPrimoOperando;
         private CHugeNumber mSecondoOperando;
         private CHugeNumber mRisultato;
-        private Operazioni mOperazione;
+        //private Operazioni mOperazione;
 
         public CHugeNumber PrimoOperando
         {
@@ -34,9 +34,9 @@
             set { mRisultato = value; }
         }
         // [ + - * / ]
-        public Operazioni Operazione
-        {
-            get { return mOperazione; }
-            set { mOperazione = value; }
-        }
+        //public Operazioni Operazione
+        //{
+        //    get { return mOperazione; }
+        //    set { mOperazione = value; }
+        //}
     }

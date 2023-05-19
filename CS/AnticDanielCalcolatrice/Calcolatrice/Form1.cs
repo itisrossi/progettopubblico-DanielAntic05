@@ -16,6 +16,7 @@ namespace Calcolatrice
         private CCalcolatrice calcolatrice;
         String operation = "";
         bool isOperationPerformed = false;
+        bool isPositive = true;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Calcolatrice
         //{
         //    display.Text += "1";
         //}
+
         //per inserire i numeri, in questo modo non devo scrivere per ogni bottone cosa far vedere
         //nel display
         private void numeroPremuto(object sender, EventArgs e)
@@ -61,7 +63,6 @@ namespace Calcolatrice
             calcolatrice.PrimoOperando = new CHugeNumber(display.Text);
             labelCurrentOperation.Text = calcolatrice.PrimoOperando + " " + operation;
             isOperationPerformed = true;
-            //calcolatrice.Operazione = /*CCalcolatrice.Operazioni =*/ CCalcolatrice.Operazioni.somma;
         }
         private void button24_Click(object sender, EventArgs e)
         {
@@ -69,25 +70,21 @@ namespace Calcolatrice
             calcolatrice.SecondoOperando = new CHugeNumber(display.Text);
             switch (operation)
             {
-                case /*CCalcolatrice.Operazioni.somma*/ "+":
+                case "+":
                     calcolatrice.Risultato = calcolatrice.PrimoOperando + calcolatrice.SecondoOperando;
                     break;
 
-                case /*CCalcolatrice.Operazioni.prodotto*/ "*":
+                case "*":
                     calcolatrice.Risultato = calcolatrice.PrimoOperando * calcolatrice.SecondoOperando;
                     break;
 
-                case /*CCalcolatrice.Operazioni.prodotto*/ "-":
+                case "-":
                     calcolatrice.Risultato = calcolatrice.PrimoOperando - calcolatrice.SecondoOperando;
                     break;
 
-                case /*CCalcolatrice.Operazioni.prodotto*/ "/":
+                case "/":
                     calcolatrice.Risultato = calcolatrice.PrimoOperando / calcolatrice.SecondoOperando;
                     break;
-
-                /*case "√":
-                    calcolatrice.Risultato = CHugeNumber.sqrt(calcolatrice.PrimoOperando);
-                    break;*/
 
                 default:
                     break;
@@ -104,6 +101,7 @@ namespace Calcolatrice
         {
             display.Text = "0";
             labelCurrentOperation.Text = "";
+            isPositive = false;
             //resultValue = "0";
         }
 
@@ -114,12 +112,42 @@ namespace Calcolatrice
             else
                 display.Text = "0";
         }
-
+        //radice di un numero
         private void click_sqrt(object sender, EventArgs e)
         {
             calcolatrice.PrimoOperando = new CHugeNumber(display.Text);
             calcolatrice.Risultato = CHugeNumber.sqrt(calcolatrice.PrimoOperando);
             display.Text = calcolatrice.Risultato.ToString();
         }
+        //potenza di un numero
+        private void click_Pow(object sender, EventArgs e)
+        {
+            calcolatrice.PrimoOperando = new CHugeNumber(display.Text);
+            calcolatrice.Risultato = calcolatrice.PrimoOperando * calcolatrice.PrimoOperando;
+            display.Text = calcolatrice.Risultato.ToString();
+        }
+        // percentuale di un numero
+        private void click_Percent(object sender, EventArgs e)
+        {
+            calcolatrice.PrimoOperando = new CHugeNumber(display.Text);
+            CHugeNumber cento = new CHugeNumber("100");
+            calcolatrice.Risultato = calcolatrice.PrimoOperando / cento;
+            display.Text = calcolatrice.Risultato.ToString();
+        }
+        // cambia solo il segno, non funziona bene
+        private void changeSimbol_Click(object sender, EventArgs e)
+        {
+            if (isPositive)
+            {
+                display.Text = "-" + display.Text.Substring(0);
+                isPositive = false;
+            }
+            else
+            {
+                display.Text = display.Text.Substring(1);
+                isPositive = true;
+            }
+        }
+
     }
 }
