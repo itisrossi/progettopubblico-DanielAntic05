@@ -105,7 +105,7 @@ namespace Calcolatrice
             labelCurrentOperation.Text = "";
             isPositive = true;
         }
-
+        // cancella cifra
         private void canc_Click(object sender, EventArgs e)
         {
             if (display.Text.Length > 1)
@@ -140,7 +140,7 @@ namespace Calcolatrice
             calcolatrice.Risultato = calcolatrice.PrimoOperando / cento;
             display.Text = calcolatrice.Risultato.ToString();
         }
-        // cambia solo il segno, non funziona bene
+        // cambio segno
         private void changeSimbol_Click(object sender, EventArgs e)
         {
             if (isPositive)
