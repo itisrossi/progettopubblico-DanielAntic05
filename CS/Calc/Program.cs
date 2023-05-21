@@ -11,8 +11,8 @@ namespace Frazioni{
     class Program{
         static void Main(string[] args)
         {
-            CHugeNumber n1 = new CHugeNumber("1234567");
-            CHugeNumber n2 = new CHugeNumber("1234567");
+            CHugeNumber n1 = new CHugeNumber("123456");
+            CHugeNumber n2 = new CHugeNumber("123456");
             CHugeNumber risultato = new CHugeNumber();
 
             // CFrazione f1, f2, f3, f4, f5, r;
@@ -72,16 +72,18 @@ namespace Frazioni{
             Console.WriteLine("La sottrazione e' = {0}", risultato.ToString());
 
             Stopwatch stopwatch = new Stopwatch();
+            // stopwatch.Start();
+
+            // risultato = (n1 * n2);
+            // stopwatch.Stop();
+
+            // Console.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);            
+            // Console.WriteLine("La moltiplicazione e' = {0}", risultato.ToString());
+
             stopwatch.Start();
-
-            risultato = (n1 * n2);
-            stopwatch.Stop();
-
-            Console.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);            
-            Console.WriteLine("La moltiplicazione e' = {0}", risultato.ToString());
-
             risultato = (n1 / n2);
-            
+            stopwatch.Stop();
+            Console.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
             // string divisioneVirgola = risultato.ToString();
             // char Virgola = divisioneVirgola[divisioneVirgola.Length - 1]; 
             // string divisione = "";

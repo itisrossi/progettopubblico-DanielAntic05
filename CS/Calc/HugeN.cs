@@ -71,9 +71,9 @@ using System.Text;
                         Riporto = 1;
                         risultato.Cifre[i] -= 10;
                         // Controllo overflow
-                        if (i == 0)
+                        // if (i == 0)
                             // throw new OverflowException();
-                            Riporto = 0;
+                            // Riporto = 0;
                     } else
                         Riporto = 0;
             }
@@ -117,14 +117,53 @@ using System.Text;
             CHugeNumber ris = new CHugeNumber();
             CHugeNumber uno = new CHugeNumber("1");
             CHugeNumber zero = new CHugeNumber("0");
+            CHugeNumber multiplo = new CHugeNumber("");
+
             while (maggiore(n2, zero) == true)
             {
+                multiplo = CHugeNumber.multiplo(n1);
                 ris += n1;
                 n2 = n2 - uno;
             }
             return ris;
         }
 
+        public static bool isMultiple(CHugeNumber n1, CHugeNumber n2)
+        {
+            CHugeNumber zero = new CHugeNumber("0");
+            // sottraggo finché n1 == 0 oppure n1 < n2
+            while (maggiore(n1, zero) == true && maggiore(n1, n2) == true)
+                {
+                    n1 -= n2;
+                }
+            // se n1 e' > 0 e < n2 allora il resto != 0 e n2 non è il multiplo
+            if (maggiore(n1, zero) == true && maggiore(n1, n2) == true)
+                return false;
+            else
+                return true;
+        }
+        public static CHugeNumber multiplo(CHugeNumber n1)
+        {
+            CHugeNumber ris = new CHugeNumber("0");
+            CHugeNumber uno = new CHugeNumber("1");
+            CHugeNumber zero = new CHugeNumber("0");
+            CHugeNumber inizioMul = new CHugeNumber("2");
+
+            // controllo se il multiplo è maggiore del numero
+            if (maggiore(inizioMul, n1) == true)
+            {
+                return ris;
+            }
+            else
+            {
+                // controllo se n1 / inizioMul ha resto 0, se si allora inizioMul e' un multiplo di n1
+                while (isMultiple(n1, inizioMul) == false)
+                {
+                    
+                }
+                return ris;
+            }
+        }
         public static CHugeNumber operator / (CHugeNumber n1, CHugeNumber n2)
         {
             CHugeNumber ris = new CHugeNumber("0");
